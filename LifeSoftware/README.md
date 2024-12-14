@@ -1,8 +1,9 @@
-![image](https://github.com/user-attachments/assets/9867ac10-e255-42b3-b974-a68a8c5b8ce9)# Домашнее задание к занятию 7 «Жизненный цикл ПО»
+# Домашнее задание к занятию 7 «Жизненный цикл ПО»
 
 ## Подготовка к выполнению
 Развернута и настроена локальная версия Jira.
 ![image](https://github.com/user-attachments/assets/e1b2f56a-1d45-4530-a0db-70c9e11e5d0f)
+![image](https://github.com/user-attachments/assets/d2ce97c6-11fb-4d1a-a9f1-8b4f0d0bef02)
 
 ## Основная часть
 
