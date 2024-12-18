@@ -32,37 +32,3 @@ resource "yandex_compute_instance" "storage" {
     nat       = var.vm_resource.storage.nat
   }
 }
-
-
-
-resource "yandex_compute_instance" "inst" {
-
-  count = var.count_iterrator
-
-  name        = "${var.vm_resource.inst.vm_name}-0${count.index+1}" #Имя ВМ в облачной консоли
-  hostname    = "${var.vm_resource.inst.vm_name}-0${count.index+1}" #формирует FDQN имя хоста, без hostname будет сгенрировано случаное имя.
-  platform_id = var.vm_resource.inst.platform
-
-  resources {
-    cores         = var.vm_resource.inst.cpu
-    memory        = var.vm_resource.inst.ram
-    core_fraction = var.vm_resource.inst.core_fraction
-  }
-
-  boot_disk {
-    initialize_params {
-      image_id = data.yandex_compute_image.centos.image_id
-      type     = var.vm_resource.inst.disk_type
-      size     = var.vm_resource.inst.disk_size
-    }
-  }
-
-  metadata = local.metadata
-
-  scheduling_policy { preemptible = true }
-
-  network_interface {
-    subnet_id = yandex_vpc_subnet.develop.id
-    nat       = var.vm_resource.inst.nat
-  }
-}

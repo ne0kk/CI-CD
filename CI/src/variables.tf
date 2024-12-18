@@ -59,11 +59,11 @@ variable "vm_resource" {
     disk_size = number
     }))
   default = { 
-      "storage" = {
-      vm_name="vector", 
+    "storage" = {
+      vm_name="sonar", 
       platform = "standard-v1"
       cpu=2, 
-      ram=2, 
+      ram=4, 
       core_fraction = 20, 
       nat = true,
       disk_type = "network-hdd" ,
@@ -71,25 +71,14 @@ variable "vm_resource" {
     } ,
 
     "web"= {
-      vm_name="clickhouse", 
+      vm_name="nexus", 
       platform = "standard-v1"
       cpu=2, 
-      ram=2, 
+      ram=4, 
       core_fraction = 20, 
       nat = true,
       disk_type = "network-hdd" ,
       disk_size = 30
     } ,
-
-    "inst"= {
-      vm_name="lighthouse", 
-      platform = "standard-v1"
-      cpu=2, 
-      ram=2, 
-      core_fraction = 20, 
-      nat = true,
-      disk_type = "network-hdd" ,
-      disk_size = 30
-    }
   }
 }
